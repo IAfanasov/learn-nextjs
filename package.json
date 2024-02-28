@@ -1,8 +1,8 @@
 {
   "private": true,
-  "export": "next export",
   "scripts": {
     "build": "next build",
+    "export": "next export",
     "dev": "next dev",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",

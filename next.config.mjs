@@ -6,7 +6,7 @@ const nextConfig = {
     loader: 'akamai',
     path: '',
   },
-  assetPrefix: '/',
+  assetPrefix: '/learn-nextjs/',
   output: 'export',
 };
 

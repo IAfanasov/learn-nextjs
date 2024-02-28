@@ -1,5 +1,6 @@
-import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
+import '@/app/ui/global.css';
+import { ChakraProvider } from '@chakra-ui/react';
 
 export default function RootLayout({
   children,
@@ -8,7 +9,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>My App</title>
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        <ChakraProvider>{children}</ChakraProvider>
+      </body>
     </html>
   );
 }

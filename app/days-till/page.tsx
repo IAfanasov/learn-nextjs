@@ -3,7 +3,7 @@
 import { IconButton, Input, Stack } from '@chakra-ui/react';
 import { CheckIcon, PencilIcon } from '@heroicons/react/24/outline';
 import { formatDuration, intervalToDuration } from 'date-fns';
-import * as Locales from 'date-fns/locale';
+import { ru } from 'date-fns/locale';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
@@ -21,12 +21,7 @@ export default function Page() {
   const dateQs = searchParams.get(QueryParams.date);
   const localeStr = searchParams.get(QueryParams.locale);
 
-  const locale = useMemo(() => {
-    return (
-      // @ts-ignore
-      Locales[localeStr || 'ru'] ?? Locales.enUS
-    );
-  }, [localeStr]);
+  const locale = useMemo(() => (localeStr == 'ru' ? ru : undefined), [localeStr]);
 
   const targetDate = useMemo(
     () => (dateQs ? new Date(dateQs) : new Date()),

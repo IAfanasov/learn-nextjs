@@ -48,6 +48,7 @@ export default function Page() {
     const params = new URLSearchParams(searchParams);
     params.set(QueryParams.title, titleDraft);
     params.set(QueryParams.date, targetDateDraft);
+
     replace(`${pathname}?${params.toString()}`);
   }, [titleDraft, replace, searchParams, pathname, targetDateDraft]);
 
@@ -76,7 +77,6 @@ export default function Page() {
               <IconButton
                 rounded={'full'}
                 type="submit"
-                // background="none"
                 aria-label="Save"
                 icon={<CheckIcon width={32} />}
               />
